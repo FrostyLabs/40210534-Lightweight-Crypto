@@ -40,8 +40,32 @@ $ ./present AAAAAAAA AAAAAAAAAA
 
 ## Benchmark 
 The following runs all benchmark tests. 
+
 ```
 $ go test present_test.go -bench=.
+goos: linux
+goarch: 386
+BenchmarkBlock_Encrypt/80-bit_key-2         	1000000000	         0.000051 ns/op
+BenchmarkBlock_Encrypt/80-bit_key#01-2      	1000000000	         0.000056 ns/op
+BenchmarkBlock_Encrypt/80-bit_key#02-2      	1000000000	         0.000054 ns/op
+BenchmarkBlock_Encrypt/80-bit_key#03-2      	1000000000	         0.000077 ns/op
+BenchmarkBlock_Encrypt/128-bit_key-2        	1000000000	         0.000105 ns/op
+BenchmarkBlock_Encrypt/128-bit_key#01-2     	1000000000	         0.000109 ns/op
+BenchmarkBlock_Encrypt/128-bit_key#02-2     	1000000000	         0.000142 ns/op
+BenchmarkBlock_Encrypt/128-bit_key#03-2     	1000000000	         0.000065 ns/op
+BenchmarkBlock_Encrypt/128-bit_key#04-2     	1000000000	         0.000067 ns/op
+BenchmarkBlock_Decrypt/80-bit_key-2         	1000000000	         0.000100 ns/op
+BenchmarkBlock_Decrypt/80-bit_key#01-2      	1000000000	         0.000115 ns/op
+BenchmarkBlock_Decrypt/80-bit_key#02-2      	1000000000	         0.000118 ns/op
+BenchmarkBlock_Decrypt/80-bit_key#03-2      	1000000000	         0.000129 ns/op
+BenchmarkBlock_Decrypt/128-bit_key-2        	1000000000	         0.000083 ns/op
+BenchmarkBlock_Decrypt/128-bit_key#01-2     	1000000000	         0.000120 ns/op
+BenchmarkBlock_Decrypt/128-bit_key#02-2     	1000000000	         0.000082 ns/op
+BenchmarkBlock_Decrypt/128-bit_key#03-2     	1000000000	         0.000105 ns/op
+BenchmarkBlock_Decrypt/128-bit_key#04-2     	1000000000	         0.000061 ns/op
+PASS
+ok  	command-line-arguments	0.256s
+```
 
 
 **Note**: I used the present repo suggested in the [GoDoc](https://godoc.org/github.com/yi-jiayu/PRESENT.go). The GitHub repository is [here](https://github.com/yi-jiayu/PRESENT.go), used at commit `3a4450fb5c2634b2fdc1443c3d0eef0538a529b1`. 
