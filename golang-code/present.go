@@ -1,12 +1,16 @@
 package main
 
+// To build: 
+// $ go build present.go
+
 import (
 	"encoding/hex"
 	"fmt"
 	"log"
-	"os" 
+	"os"
 	"time"
-	"./present"
+
+	"github.com/yi-jiayu/PRESENT.go"
 )
 
 func encodeHex(data []byte) string {
@@ -21,7 +25,7 @@ func timeTrack(start time.Time, name string) {
 }
 
 func present_cipher(p []byte, k []byte) {
-	defer timeTrack(time.Now(), "ciphering")
+	defer timeTrack(time.Now(), "This activity")
 	plaintext := []byte(p)
 
 	key := []byte(k)
@@ -53,6 +57,7 @@ func main() {
 		fmt.Printf(" - That that plaintext is 8 bytes\n")
 		fmt.Printf(" - That the key is 10 or 16 bytes\n")
 		fmt.Printf("\tUsage: %s Plaintext Key \n\n", os.Args[0])
+		
 		// Providing proof of concept
 		fmt.Printf("[+] Here is a sample.\n") 
 		fmt.Printf("[+] Plaintext and key both set as a null bytearray\n\n")
