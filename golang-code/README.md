@@ -10,7 +10,7 @@ $ go build present.go
 ```
 
 
-## Testing the binary:
+## Verifying the binary:
 ```
 $ ./present
 [!] Please make sure:
@@ -37,6 +37,11 @@ $ ./present AAAAAAAA AAAAAAAAAA
 	Decipher   : 4141414141414141
 2020/04/08 19:50:56 ciphering took 461ms
 ```
+
+## Benchmark 
+The following runs all benchmark tests. 
+```
+$ go test present_test.go -bench=.
 
 
 **Note**: I used the present repo suggested in the [GoDoc](https://godoc.org/github.com/yi-jiayu/PRESENT.go). The GitHub repository is [here](https://github.com/yi-jiayu/PRESENT.go), used at commit `3a4450fb5c2634b2fdc1443c3d0eef0538a529b1`. 
