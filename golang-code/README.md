@@ -1,24 +1,23 @@
 # Current status
   - The code is able to run with 8 byte plaintext, and 10 or 16 byte key
-  - The code times the duration of the cipher encryption and decryption
+  - The code times and reports the duration of the cipher encryption and decryption
+  - Use golang's testing function for a benchmark. 
 
-## Todo
-  - [ ] Implement the testing functions
 
-Generate the binary:
+## Generate the binary:
 ```
-$ go build -o outfile
+$ go build present.go 
 ```
 
 
-Testing the binary:
+## Testing the binary:
 ```
-$ ./outfile
+$ ./present
 [!] Please make sure:
  - To only use 2 arguments
  - That that plaintext is 8 bytes
  - That the key is 10 or 16 bytes
-	Usage: ./outfile Plaintext Key
+	Usage: ./present Plaintext Key
 
 [+] Here is a sample.
 [+] Plaintext and key both set as a null bytearray
@@ -31,7 +30,7 @@ $ ./outfile
 ```
 Running the binary with 8 byte plaintext and 10 byte key:
 ```
-$ ./outfile AAAAAAAA AAAAAAAAAA
+$ ./present AAAAAAAA AAAAAAAAAA
 	Plaintext  : 4141414141414141
 	Key        : 41414141414141414141
 	Ciphertext : 902545ba28d3193f
@@ -40,4 +39,4 @@ $ ./outfile AAAAAAAA AAAAAAAAAA
 ```
 
 
-Note: I used the present repo suggested in the [GoDoc](https://godoc.org/github.com/yi-jiayu/PRESENT.go). The GitHub repository is [here](https://github.com/yi-jiayu/PRESENT.go), used at commit `3a4450fb5c2634b2fdc1443c3d0eef0538a529b1`
+**Note**: I used the present repo suggested in the [GoDoc](https://godoc.org/github.com/yi-jiayu/PRESENT.go). The GitHub repository is [here](https://github.com/yi-jiayu/PRESENT.go), used at commit `3a4450fb5c2634b2fdc1443c3d0eef0538a529b1`. 
